@@ -1,35 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/05/22/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+    <title>Somthing about blog</title>
+    <url>/2020/05/24/Somthing%20about%20blog/</url>
+    <content><![CDATA[<p>This is my first post article, and I learned a lot when building my first personal blog.🤣</p>
+<p>About the purpose of building a blog, I just want to slow donw my step, and do somthing more about thinking,<br>recording and also it can be my working notes.🤔</p>
+<p>These days, I have realized that I ‘m making more and more mistakes in my work, and most of those can easy to be avoided.😔😔😔<br>The cause of this result is that I never have a plan before coding or doing other things, no plan, no framework, not strictly at all.</p>
+<p>Although, I have some experience in game development since  I ‘m in the University, but never do a systematic learning. And the consequence is that,<br>I lack a specialty of my profession.</p>
+<p>Not only at work, the lack of notes makes me feel that I am losing everything of my life step by step, especially in a fast-paced life.</p>
+<p>So, I hope my blog can not only make sense to my work, but to my life, to my fucking English learning.👀👀👀</p>
 ]]></content>
       <categories>
         <category>Daily</category>
       </categories>
       <tags>
         <tag>Daily</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>苏文傻逼</title>
-    <url>/2020/05/22/Test/</url>
-    <content><![CDATA[<p>同意的打赏哈哈哈</p>
-]]></content>
-      <categories>
-        <category>苏文傻逼</category>
-      </categories>
-      <tags>
-        <tag>苏文傻逼</tag>
       </tags>
   </entry>
 </search>
