@@ -140,15 +140,15 @@ var _hmt = _hmt || [];
 
 
 
-<meta name="description" content="Demand scenarioIn game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetit">
+<meta name="description" content="Demand scenario   In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repe">
 <meta property="og:type" content="article">
 <meta property="og:title" content="How to create a singleton base class with generic">
 <meta property="og:url" content="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/index.html">
 <meta property="og:site_name" content="Vic&#39;s Blog">
-<meta property="og:description" content="Demand scenarioIn game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetit">
+<meta property="og:description" content="Demand scenario   In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repe">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-27T07:36:15.000Z">
-<meta property="article:modified_time" content="2020-05-27T08:08:11.064Z">
+<meta property="article:modified_time" content="2020-05-27T08:17:22.681Z">
 <meta property="article:author" content="Vic">
 <meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary">
@@ -583,7 +583,7 @@ var _hmt = _hmt || [];
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  131
+                  261
                 </span>
               
 
@@ -620,9 +620,12 @@ var _hmt = _hmt || [];
       
 
       
-        <h2 id="Demand-scenario"><a href="#Demand-scenario" class="headerlink" title="Demand scenario"></a>Demand scenario</h2><p>In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetitive and unnessery work.<br>So, I want to create a base class with generic and implement a method to return a singleton instance.</p>
-<h2 id="Initial-attempt"><a href="#Initial-attempt" class="headerlink" title="Initial attempt"></a>Initial attempt</h2><p>  I create a base class simply with a generic type T, and implement a static get method, but it’s not work because of typescript is not allow to use generic type in a static member. </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ToSingleTon</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">private <span class="keyword">static</span> ins: any;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">get</span> Inst(): T &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.ins ? <span class="keyword">this</span>.ins : (<span class="keyword">this</span>.ins = <span class="keyword">new</span> <span class="keyword">this</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    test() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">" base "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Demand-scenario"><a href="#Demand-scenario" class="headerlink" title="Demand scenario"></a>Demand scenario</h2><p>   In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetitive and unnessery work.<br>So, I want to create a base class with generic and implement a method to return a singleton instance.</p>
+<h2 id="Initial-attempt"><a href="#Initial-attempt" class="headerlink" title="Initial attempt"></a>Initial attempt</h2><p>   I create a base class simply with a generic type T, and implement a static get method, but it’s not work because of typescript is not allow to use generic type in a static member.<br>   According to ts(2302).</p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">class</span> ToSingleTon&lt;T&gt; &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> ins: <span class="built_in">any</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">get</span> Inst(): T &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.ins ? <span class="keyword">this</span>.ins : (<span class="keyword">this</span>.ins = <span class="keyword">new</span> <span class="keyword">this</span>());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    test() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">" base "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   By the way, in the method Inst(), we can’t write new T(), because of T is only a type ,but not a value. So we should write as new this();</p>
+<h2 id="Final-Solution"><a href="#Final-Solution" class="headerlink" title="Final Solution"></a>Final Solution</h2><p>   Define a function with generic type T named such as SingleTon<T>, and define a class in this function context, and under this context , we are allow to use generic type in static member method.</T></p>
+<figure class="highlight ts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">SingleTon</span>&lt;<span class="title">T</span>&gt;(<span class="params"></span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">class</span> ToSingleTon &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> ins: <span class="built_in">any</span>;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">get</span> Inst(): T &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.ins ? <span class="keyword">this</span>.ins : (<span class="keyword">this</span>.ins = <span class="keyword">new</span> <span class="keyword">this</span>());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        test() &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">" base "</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> ToSingleTon;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> test <span class="keyword">extends</span> SingleTon&lt;test&gt;() &#123;</span><br><span class="line">    test() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">" test "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">test.Inst.test();</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -959,7 +962,7 @@ var _hmt = _hmt || [];
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demand-scenario"><span class="nav-number">1.</span> <span class="nav-text">Demand scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initial-attempt"><span class="nav-number">2.</span> <span class="nav-text">Initial attempt</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demand-scenario"><span class="nav-number">1.</span> <span class="nav-text">Demand scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initial-attempt"><span class="nav-number">2.</span> <span class="nav-text">Initial attempt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final-Solution"><span class="nav-number">3.</span> <span class="nav-text">Final Solution</span></a></li></ol></div>
             
 
           </div>
@@ -993,7 +996,7 @@ var _hmt = _hmt || [];
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">312</span>
+    <span title="Site words total count">442</span>
   
 </div>
 
