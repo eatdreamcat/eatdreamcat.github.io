@@ -129,7 +129,7 @@ var _hmt = _hmt || [];
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="TypeScript," />
 
 
 
@@ -140,15 +140,17 @@ var _hmt = _hmt || [];
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Vic&#39;s Blog">
-<meta property="og:url" content="https://vicat.wang/404/index.html">
+<meta name="description" content="Demand scenarioIn game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetit">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to create a singleton base class with generic">
+<meta property="og:url" content="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/index.html">
 <meta property="og:site_name" content="Vic&#39;s Blog">
+<meta property="og:description" content="Demand scenarioIn game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetit">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-05-22T09:04:22.834Z">
-<meta property="article:modified_time" content="2020-05-22T09:04:22.834Z">
+<meta property="article:published_time" content="2020-05-27T07:36:15.000Z">
+<meta property="article:modified_time" content="2020-05-27T08:08:11.064Z">
 <meta property="article:author" content="Vic">
-<meta property="article:tag" content="Game development; Design pattern; Daily;">
+<meta property="article:tag" content="TypeScript">
 <meta name="twitter:card" content="summary">
 
 
@@ -179,13 +181,13 @@ var _hmt = _hmt || [];
 
 
 
-  <link rel="canonical" href="https://vicat.wang/404/"/>
+  <link rel="canonical" href="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/"/>
 
 
 
 
 
-  <title> | Vic's Blog</title>
+  <title>How to create a singleton base class with generic | Vic's Blog</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -222,7 +224,7 @@ var _hmt = _hmt || [];
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.1"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -471,50 +473,261 @@ var _hmt = _hmt || [];
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Vic">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Vic's Blog">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline"></h1>
-
-
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="robots" content="all">
-    <meta name="robots" content="index,follow">
-    <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
-  <meta name="generator" content="Hexo 4.2.1"></head>
-  <body>
-    <script type="text/plain" src="http://www.qq.com/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="Back to home"></script>
-    <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-    <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-  </body>
-</html>
-
+          <h1 class="post-title" itemprop="name headline">How to create a singleton base class with generic</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-27T15:36:15+08:00">
+                2020-05-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/TypeScript/" itemprop="url" rel="index">
+                    <span itemprop="name">TypeScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/05/27/How-to-create-a-singleton-base-class-with-generic/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count fb-comments-count" data-href="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/" itemprop="commentCount">0</span> comments
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  131
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="Demand-scenario"><a href="#Demand-scenario" class="headerlink" title="Demand scenario"></a>Demand scenario</h2><p>In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetitive and unnessery work.<br>So, I want to create a base class with generic and implement a method to return a singleton instance.</p>
+<h2 id="Initial-attempt"><a href="#Initial-attempt" class="headerlink" title="Initial attempt"></a>Initial attempt</h2><p>  I create a base class simply with a generic type T, and implement a static get method, but it’s not work because of typescript is not allow to use generic type in a static member. </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ToSingleTon</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">private <span class="keyword">static</span> ins: any;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">get</span> Inst(): T &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.ins ? <span class="keyword">this</span>.ins : (<span class="keyword">this</span>.ins = <span class="keyword">new</span> <span class="keyword">this</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    test() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">" base "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
     
     
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/reward/wechat.jpg" alt="Vic WeChat Pay"/>
+        <p>WeChat Pay</p>
+      </div>
+    
+
+    
+
+    
+      <div id="bitcoin" style="display: inline-block">
+        <img id="bitcoin_qr" src="/images/reward/bitcoin.jpg" alt="Vic Bitcoin"/>
+        <p>Bitcoin</p>
+      </div>
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/TypeScript/" rel="tag"># TypeScript</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/05/24/Somthing%20about%20blog/" rel="next" title="Somthing about blog">
+                <i class="fa fa-chevron-left"></i> Somthing about blog
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -527,7 +740,7 @@ var _hmt = _hmt || [];
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="https://vicat.wang/404/index.html"
+           data-href="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -592,7 +805,7 @@ var _hmt = _hmt || [];
   
     <div class="comments" id="comments">
       <div class="fb-comments"
-           data-href="https://vicat.wang/404/index.html"
+           data-href="https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/"
            data-numposts="10"
            data-width="100%"
            data-colorscheme="light">
@@ -646,8 +859,17 @@ var _hmt = _hmt || [];
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -727,6 +949,22 @@ var _hmt = _hmt || [];
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demand-scenario"><span class="nav-number">1.</span> <span class="nav-text">Demand scenario</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Initial-attempt"><span class="nav-number">2.</span> <span class="nav-text">Initial attempt</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1003,9 +1241,9 @@ var _hmt = _hmt || [];
       <script type="text/javascript">
         var commenthub_id = '42267382';
         var commenthub_website = 'vicat.wang';
-        var commenthub_identifier = '404/index.html';
-        var commenthub_url = 'https://vicat.wang/404/index.html';
-        var commenthub_title = '';
+        var commenthub_identifier = '2020/05/27/How-to-create-a-singleton-base-class-with-generic/';
+        var commenthub_url = 'https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/';
+        var commenthub_title = 'How to create a singleton base class with generic';
         var dsq = document.createElement('script');
             dsq.type = 'text/javascript';
             dsq.async = true;
@@ -1023,9 +1261,9 @@ var _hmt = _hmt || [];
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://vicat.wang/404/index.html';
-          this.page.identifier = '404/index.html';
-          this.page.title = '';
+          this.page.url = 'https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/';
+          this.page.identifier = '2020/05/27/How-to-create-a-singleton-base-class-with-generic/';
+          this.page.title = 'How to create a singleton base class with generic';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://vicat.disqus.com/embed.js';
@@ -1442,6 +1680,23 @@ var _hmt = _hmt || [];
   </script>
 
   
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 25338,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
 
   
   

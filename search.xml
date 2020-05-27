@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>How to create a singleton base class with generic</title>
+    <url>/2020/05/27/How-to-create-a-singleton-base-class-with-generic/</url>
+    <content><![CDATA[<h2 id="Demand-scenario"><a href="#Demand-scenario" class="headerlink" title="Demand scenario"></a>Demand scenario</h2><p>In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetitive and unnessery work.<br>So, I want to create a base class with generic and implement a method to return a singleton instance.</p>
+<h2 id="Initial-attempt"><a href="#Initial-attempt" class="headerlink" title="Initial attempt"></a>Initial attempt</h2><p>  I create a base class simply with a generic type T, and implement a static get method, but it’s not work because of typescript is not allow to use generic type in a static member. </p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ToSingleTon</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line">private <span class="keyword">static</span> ins: any;</span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">get</span> Inst(): T &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.ins ? <span class="keyword">this</span>.ins : (<span class="keyword">this</span>.ins = <span class="keyword">new</span> <span class="keyword">this</span>());</span><br><span class="line">    &#125;</span><br><span class="line">    test() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">" base "</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>TypeScript</category>
+      </categories>
+      <tags>
+        <tag>TypeScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Somthing about blog</title>
     <url>/2020/05/24/Somthing%20about%20blog/</url>
     <content><![CDATA[<p>This is my first post article, and I learned a lot when building my first personal blog.🤣</p>
