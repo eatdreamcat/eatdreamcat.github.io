@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>How to create a singleton base class with generic</title>
+    <title>Somthing about blog</title>
+    <url>/2020/05/24/Somthing%20about%20blog/</url>
+    <content><![CDATA[<p>This is my first post article, and I learned a lot when building my first personal blog.🤣</p>
+<p>About the purpose of building a blog, I just want to slow <del>donw</del> down my step, and do somthing more about thinking,<br>recording and also it can be my working notes.🤔</p>
+<p>These days, I have realized that I ‘m making more and more mistakes in my work, and most of those can easy to be avoided.😔😔😔<br>The cause of this result is that I never have a plan before coding or doing other things, no plan, no framework, not strictly at all.</p>
+<p>Although, I have some experience in game development since  I ‘m in the University, but never do a systematic learning. And the consequence is that,<br>I lack a specialty of my profession.</p>
+<p>Not only at work, the lack of notes makes me feel that I am losing everything of my life step by step, especially in a fast-paced life.</p>
+<p>So, I hope my blog can not only make sense to my work, but to my life, to my fucking English learning.👀👀👀</p>
+]]></content>
+      <categories>
+        <category>Daily</category>
+      </categories>
+      <tags>
+        <tag>Daily</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>How to create a singleton base class with generic type</title>
     <url>/2020/05/27/How-to-create-a-singleton-base-class-with-generic/</url>
     <content><![CDATA[<h2 id="Demand-scenario"><a href="#Demand-scenario" class="headerlink" title="Demand scenario"></a>Demand scenario</h2><p>   In game development, we may need a lot of singleton class , if we create it one by one and each of them all has a same function to get  singleton instance. This makes us doing a repetitive and unnessery work.<br>So, I want to create a base class with generic and implement a method to return a singleton instance.</p>
 <h2 id="Initial-attempt"><a href="#Initial-attempt" class="headerlink" title="Initial attempt"></a>Initial attempt</h2><p>   I create a base class simply with a generic type T, and implement a static get method, but it’s not work because of typescript is not allow to use generic type in a static member.<br>   According to ts(2302).</p>
@@ -17,20 +34,14 @@
       </tags>
   </entry>
   <entry>
-    <title>Somthing about blog</title>
-    <url>/2020/05/24/Somthing%20about%20blog/</url>
-    <content><![CDATA[<p>This is my first post article, and I learned a lot when building my first personal blog.🤣</p>
-<p>About the purpose of building a blog, I just want to slow <del>donw</del> down my step, and do somthing more about thinking,<br>recording and also it can be my working notes.🤔</p>
-<p>These days, I have realized that I ‘m making more and more mistakes in my work, and most of those can easy to be avoided.😔😔😔<br>The cause of this result is that I never have a plan before coding or doing other things, no plan, no framework, not strictly at all.</p>
-<p>Although, I have some experience in game development since  I ‘m in the University, but never do a systematic learning. And the consequence is that,<br>I lack a specialty of my profession.</p>
-<p>Not only at work, the lack of notes makes me feel that I am losing everything of my life step by step, especially in a fast-paced life.</p>
-<p>So, I hope my blog can not only make sense to my work, but to my life, to my fucking English learning.👀👀👀</p>
-]]></content>
+    <title>Sort</title>
+    <url>/2020/06/01/Sort/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>Daily</category>
+        <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Daily</tag>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
 </search>

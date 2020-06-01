@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://vicat.wang/2020/06/01/Sort/</loc>
+    
+    <lastmod>2020-06-01T10:32:08.507Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://vicat.wang/Algorithm/index.html</loc>
+    
+    <lastmod>2020-06-01T07:32:17.427Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://vicat.wang/2020/05/27/How-to-create-a-singleton-base-class-with-generic/</loc>
     
-    <lastmod>2020-05-27T08:17:22.681Z</lastmod>
+    <lastmod>2020-06-01T06:58:40.106Z</lastmod>
     
   </url>
   
